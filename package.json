@@ -5,10 +5,15 @@
   "description": "Personal pet project, small framework",
   "author": "Urajimiru vorukofu <urajimirudev@gmail.com>",
   "homepage": "https://github.com/vorukofu/framework#readme",
-  "repository": "git@github.com:vorukofu/framework.git",
+  "repository": "https://github.com/vorukofu/framework",
   "type": "module",
   "main": "main.js",
+  "scripts": {
+    "build": "rollup --config"
+  },
   "devDependencies": {
+    "@types/node": "^24.2.1",
+    "rollup": "^4.46.2",
     "typescript": "^5.9.2"
   }
 }
