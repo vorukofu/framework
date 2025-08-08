@@ -3,6 +3,7 @@
     /* Project */
     "target": "es6",
     "module": "es6",
+    "moduleResolution": "bundler",
     /* Pathes */
     "rootDir": "packages",
     "outDir": "build",
@@ -18,7 +19,7 @@
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    "noFallthroughCasesInSwitch": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "packages/**/*.ts"
