@@ -1,0 +1,11 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "description": "Personal pet project, small framework",
+  "author": "Urajimiru vorukofu <urajimirudev@gmail.com>",
+  "homepage": "https://github.com/vorukofu/framework#readme",
+  "repository": "git@github.com:vorukofu/framework.git",
+  "type": "module",
+  "main": "main.js"
+}
