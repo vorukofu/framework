@@ -1,17 +1,26 @@
 {
   "compilerOptions": {
+    /* Project */
     "target": "es6",
-    "module": "esnext",
+    "module": "es6",
+    /* Pathes */
     "rootDir": "packages",
-    "outDir": "./build",
-    "strict": true,
+    "outDir": "build",
+    "baseUrl": ".",
+    /* Builder */
     "sourceMap": true,
-    "declaration": true,
+    "declaration": false,
+    "emitDeclarationOnly": false,
+    /* Linting */
+    "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true,
-  }
+  },
+  "include": [
+    "packages/**/*.ts"
+  ]
 }

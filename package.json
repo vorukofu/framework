@@ -7,13 +7,17 @@
   "homepage": "https://github.com/vorukofu/framework#readme",
   "repository": "https://github.com/vorukofu/framework",
   "type": "module",
-  "main": "main.js",
   "scripts": {
+    "prebuild": "rimraf build",
     "build": "rollup --config"
   },
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
     "@types/node": "^24.2.1",
     "rollup": "^4.46.2",
+    "rollup-plugin-dts": "^6.2.1",
+    "tslib": "^2.8.1",
     "typescript": "^5.9.2"
   }
 }
