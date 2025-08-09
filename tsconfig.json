@@ -9,9 +9,7 @@
     "outDir": "build",
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "packages/*"
-      ]
+      "@/*": ["packages/*"]
     },
     /* Builder */
     "sourceMap": true,
@@ -26,7 +24,5 @@
     "noImplicitOverride": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "packages/**/*.ts"
-  ],
+  "include": ["packages/**/*.ts"]
 }
