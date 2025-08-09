@@ -17,8 +17,8 @@
   },
   "lint-staged": {
     "packages/**/*.{ts,js}": [
-      "yarn run format",
-      "yarn run lint"
+      "yarn run lint",
+      "yarn run format"
     ]
   },
   "devDependencies": {
