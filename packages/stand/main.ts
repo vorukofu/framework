@@ -5,9 +5,13 @@ class Test extends Component {
     super()
   }
 
+  #onClick() {
+    console.log('click')
+  }
+
   override render() {
     return this.h('div', undefined, [
-      this.h('h1', { class: 'heading' }, 'Hello'),
+      this.h('h1', { class: 'heading', onclick: this.#onClick }, 'Hello'),
     ])
   }
 }
