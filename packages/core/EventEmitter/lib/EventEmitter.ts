@@ -6,10 +6,6 @@ import { IEventEmitter } from '../models'
  * within the framework.
  */
 export class EventEmitter implements IEventEmitter {
-  /**
-   * Internal EventTarget instance used to manage events.
-   * @private
-   */
   #eventTarget = new EventTarget()
 
   /**
