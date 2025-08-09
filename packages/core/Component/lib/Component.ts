@@ -1,5 +1,10 @@
 import { EventEmitter } from '@/core/EventEmitter'
-import { VNode } from '@/core/models/VNode'
+import {
+  VNode,
+  VNodeChildren,
+  VNodeProperties,
+  VNodeTag,
+} from '@/core/models/VNode'
 
 import { IComponent } from '../model'
 
@@ -8,7 +13,15 @@ export class Component extends EventEmitter implements IComponent {
     super()
   }
 
+  protected h(
+    tag: VNodeTag,
+    properties?: VNodeProperties,
+    children?: VNodeChildren
+  ): VNode {
+    return { tag, properties, children }
+  }
+
   render(): VNode {
-    return { tag: 'template', props: undefined, children: '' }
+    return this.h('template')
   }
 }
