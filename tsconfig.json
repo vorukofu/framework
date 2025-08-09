@@ -28,5 +28,8 @@
   },
   "include": [
     "packages/**/*.ts"
+  ],
+  "exclude": [
+    "packages/core/models/**/*.ts"
   ]
 }

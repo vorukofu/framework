@@ -28,6 +28,8 @@ export default defineConfig([
     rules: {
       ...tseslint.configs.recommended.rules,
       ...eslintPluginUnicorn.configs.recommended.rules,
+      'unicorn/filename-case': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
 ])

@@ -1,1 +1,1 @@
-export * from '@/core'
+export { Component } from '@/core/Component'
