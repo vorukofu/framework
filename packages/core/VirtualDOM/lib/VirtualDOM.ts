@@ -7,15 +7,14 @@ import { IVirtualDOM } from '../models'
  * a real DOM tree from a virtual node structure.
  */
 export class VirtualDOM implements IVirtualDOM {
-  /** Root DOM element where virtual DOM will be rendered */
-  #appElement: HTMLElement
+  #rootElement: HTMLElement
 
   /**
    * Creates an instance of VirtualDOM.
    * @param appElement - The root HTML element for rendering the virtual DOM tree
    */
-  constructor(appElement: HTMLElement) {
-    this.#appElement = appElement
+  constructor(rootElement: HTMLElement) {
+    this.#rootElement = rootElement
   }
 
   /**
@@ -33,8 +32,8 @@ export class VirtualDOM implements IVirtualDOM {
    * @param tree - The DOM element tree to render inside the root element
    */
   #renderTreeInAppElement(tree: HTMLElement): void {
-    this.#appElement.innerHTML = ''
-    this.#appElement.append(tree)
+    this.#rootElement.innerHTML = ''
+    this.#rootElement.append(tree)
   }
 
   /**
@@ -81,11 +80,15 @@ export class VirtualDOM implements IVirtualDOM {
   #setElementChildren(element: HTMLElement, children: VNodeChildren): void {
     if (typeof children === 'string') {
       element.textContent = children
-    } else if (Array.isArray(children)) {
+      return
+    }
+
+    if (Array.isArray(children)) {
       children.forEach((child) => {
         const childElement = this.#createElement(child)
         element.append(childElement)
       })
+      return
     }
   }
 }
