@@ -1,5 +1,8 @@
 import { IEventEmitter } from '../models'
 
+/**
+ *
+ */
 export class EventEmitter implements IEventEmitter {
   #eventTarget = new EventTarget()
 
@@ -11,7 +14,7 @@ export class EventEmitter implements IEventEmitter {
     this.#eventTarget.addEventListener(type, callback)
   }
 
-  removeListeners(
+  removeListener(
     type: string,
     callback: EventListenerOrEventListenerObject
   ): void {
