@@ -30,6 +30,7 @@ export default defineConfig([
       ...eslintPluginUnicorn.configs.recommended.rules,
       'unicorn/filename-case': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
+      'unicorn/prefer-event-target': 'off',
     },
   },
 ])

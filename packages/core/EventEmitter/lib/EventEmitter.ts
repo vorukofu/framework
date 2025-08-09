@@ -11,7 +11,10 @@ export class EventEmitter implements IEventEmitter {
     this.#eventTarget.addEventListener(type, callback)
   }
 
-  destroy(type: string, callback: EventListenerOrEventListenerObject): void {
+  removeListeners(
+    type: string,
+    callback: EventListenerOrEventListenerObject
+  ): void {
     this.#eventTarget.removeEventListener(type, callback)
   }
 }
