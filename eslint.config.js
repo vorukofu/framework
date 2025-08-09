@@ -1,3 +1,4 @@
+import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 import tseslint from '@typescript-eslint/eslint-plugin'
@@ -13,15 +14,20 @@ export default defineConfig([
 
     languageOptions: {
       parser: tsparser,
-      sourceType: 'module',
+      parserOptions: {
+        sourceType: 'module',
+        project: './tsconfig.json',
+      },
     },
 
     plugins: {
       '@typescript-eslint': tseslint,
+      unicorn: eslintPluginUnicorn,
     },
 
     rules: {
       ...tseslint.configs.recommended.rules,
+      ...eslintPluginUnicorn.configs.recommended.rules,
     },
   },
 ])
