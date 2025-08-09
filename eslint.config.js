@@ -16,7 +16,6 @@ export default defineConfig([
       parser: tsparser,
       parserOptions: {
         sourceType: 'module',
-        project: './tsconfig.json',
       },
     },
 
