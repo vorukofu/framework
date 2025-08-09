@@ -31,6 +31,8 @@ export default defineConfig([
       'unicorn/filename-case': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       'unicorn/prefer-event-target': 'off',
+      'unicorn/no-array-for-each': 'off',
+      'unicorn/prefer-query-selector': 'off',
     },
   },
 ])
