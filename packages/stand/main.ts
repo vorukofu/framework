@@ -1,22 +1,30 @@
+import { EventEmitter } from '@/core/EventEmitter'
 import { App, Component } from '@/main'
 
 class Test extends Component {
-  constructor() {
-    super()
-  }
+  #title: string = 'Hello'
 
   #onClick() {
-    console.log('click')
+    this.#title = 'Hello render'
+    EventEmitter.emit('update-dom')
+  }
+
+  public ping() {
+    console.log('hello')
   }
 
   override render() {
     return this.h('div', undefined, [
-      this.h('h1', { class: 'heading', onclick: this.#onClick }, 'Hello'),
+      this.h(
+        'h1',
+        { class: 'heading', onclick: this.#onClick.bind(this) },
+        this.#title
+      ),
     ])
   }
 }
 
-const com = new Test().render()
-const AppConfig = new App(document.getElementById('app')!, com)
+const Testc = new Test()
+const AppConfig = new App(document.getElementById('app')!, Testc)
 
 AppConfig.create()

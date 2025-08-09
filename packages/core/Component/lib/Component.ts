@@ -1,4 +1,3 @@
-import { EventEmitter } from '@/core/EventEmitter'
 import {
   VNode,
   VNodeChildren,
@@ -11,11 +10,7 @@ import { IComponent } from '../model'
 /**
  * Base class for all framework components.
  */
-export class Component extends EventEmitter implements IComponent {
-  constructor() {
-    super()
-  }
-
+export class Component implements IComponent {
   /**
    * Creates a virtual node instance.
    *

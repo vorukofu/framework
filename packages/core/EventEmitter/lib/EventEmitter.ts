@@ -1,20 +1,18 @@
-import { IEventEmitter } from '../models'
-
 /**
  * A wrapper around the native EventTarget that provides
  * a simplified API for subscribing and emitting events
  * within the framework.
  */
-export class EventEmitter implements IEventEmitter {
-  #eventTarget = new EventTarget()
+export class EventEmitter {
+  static #eventTarget = new EventTarget()
 
   /**
    * Emits an event to all registered listeners.
    *
-   * @param event - The Event instance to dispatch.
+   * @param type - The Event type to dispatch.
    */
-  emit(event: Event): void {
-    this.#eventTarget.dispatchEvent(event)
+  static emit(type: string): void {
+    this.#eventTarget.dispatchEvent(new Event(type))
   }
 
   /**
@@ -23,7 +21,10 @@ export class EventEmitter implements IEventEmitter {
    * @param type - The event type to listen for.
    * @param callback - The event handler function or object.
    */
-  subscribe(type: string, callback: EventListenerOrEventListenerObject): void {
+  static subscribe(
+    type: string,
+    callback: EventListenerOrEventListenerObject
+  ): void {
     this.#eventTarget.addEventListener(type, callback)
   }
 
@@ -33,7 +34,7 @@ export class EventEmitter implements IEventEmitter {
    * @param type - The event type to remove the listener from.
    * @param callback - The event handler to remove.
    */
-  removeListener(
+  static removeListener(
     type: string,
     callback: EventListenerOrEventListenerObject
   ): void {

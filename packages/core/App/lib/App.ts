@@ -1,4 +1,5 @@
-import { VNode } from '@/core/models/VNode'
+import { IComponent } from '@/core/Component'
+import { EventEmitter } from '@/core/EventEmitter'
 import { IVirtualDOM, VirtualDOM } from '@/core/VirtualDOM'
 
 import { IApp } from '../models'
@@ -8,17 +9,29 @@ import { IApp } from '../models'
  */
 export class App implements IApp {
   #VirtualDOM: IVirtualDOM
-  #appNode: VNode
+  #rootComponent: IComponent
 
-  constructor(appElement: HTMLElement, appNode: VNode) {
+  constructor(appElement: HTMLElement, rootComponent: IComponent) {
     this.#VirtualDOM = new VirtualDOM(appElement)
-    this.#appNode = appNode
+    this.#rootComponent = rootComponent
+
+    this.#subscribeListeners()
+  }
+
+  /**
+   * Subscribe listeners for framework
+   */
+  #subscribeListeners(): void {
+    EventEmitter.subscribe('update-dom', () => {
+      this.create()
+    })
   }
 
   /**
    * Creates the DOM tree.
    */
   create(): void {
-    this.#VirtualDOM.renderDiff(this.#appNode)
+    const tree = this.#rootComponent.render()
+    this.#VirtualDOM.renderDiff(tree)
   }
 }
