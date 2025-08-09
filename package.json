@@ -11,7 +11,7 @@
     "prebuild": "rimraf build",
     "build": "rollup --config",
     "format": "yarn run prettier --write .",
-    "lint": "yarn run eslint . --fix",
+    "lint": "yarn run eslint .",
     "precommit": "yarn run lint-staged",
     "prepare": "husky"
   },
