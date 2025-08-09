@@ -10,13 +10,17 @@
   "scripts": {
     "prebuild": "rimraf build",
     "build": "rollup --config",
-    "format": "yarn run prettier --write ."
+    "format": "yarn run prettier --write .",
+    "lint": "yarn run eslint . --fix"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "@rollup/plugin-typescript": "^12.1.4",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^24.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.33.0",
     "prettier": "^3.6.2",
     "rollup": "^4.46.2",
     "rollup-plugin-dts": "^6.2.1",
