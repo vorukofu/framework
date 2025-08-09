@@ -8,6 +8,11 @@
     "rootDir": "packages",
     "outDir": "build",
     "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "packages/*"
+      ]
+    },
     /* Builder */
     "sourceMap": true,
     "declaration": false,
