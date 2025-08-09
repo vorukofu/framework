@@ -1,8 +1,8 @@
-export type VNodeProperties = Record<string, any>
-export type VNodeChildren = string | VNode[]
+export type VNodeProperties = Record<string, any> | undefined
+export type VNodeChildren = string | VNode[] | undefined
 
 export interface VNode {
   tag: keyof HTMLElementTagNameMap
-  props: VNodeProperties | undefined
+  props: VNodeProperties
   children: VNodeChildren
 }
