@@ -1,0 +1,44 @@
+{
+  "name": "framework",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "description": "Personal pet project, small framework",
+  "author": "Urajimiru vorukofu <urajimirudev@gmail.com>",
+  "homepage": "https://github.com/vorukofu/framework#readme",
+  "repository": "https://github.com/vorukofu/framework",
+  "type": "module",
+  "scripts": {
+    "prebuild": "rimraf build",
+    "build": "rollup --config",
+    "stand": "yarn run vite",
+    "format": "yarn run prettier --write .",
+    "lint": "yarn run eslint .",
+    "precommit": "yarn run lint-staged",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,js}": [
+      "yarn run lint",
+      "yarn run format"
+    ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.4",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^24.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
+    "@typescript-eslint/parser": "^8.39.0",
+    "eslint": "^9.33.0",
+    "eslint-plugin-unicorn": "^60.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2",
+    "rollup": "^4.46.2",
+    "rollup-plugin-dts": "^6.2.1",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.1"
+  }
+}
